@@ -12,16 +12,19 @@ function App() {
   .then(data => setWatch(data))
   ,[])
   const handleCart = (selectedWatch) => {
-    let newCart = [selectedWatch]
-    console.log(...cart,newCart)
+    let newCart = [...cart,selectedWatch]
     setCart(newCart)
  }
  const chosseOneBtn = () => {
    const addedCart = cart.length;
    const random = Math.round(Math.random() * addedCart);
    const newProduct = cart[random]
-   console.log(newProduct)
-  
+   const newCart = cart.filter(product => product.id !== newProduct.id);
+   for (const element of newCart) {
+     cart.splice(element,1);
+     let chosseCart = [...cart]
+     setCart(chosseCart)
+   }
   }
  const chooseAgainBtn = () =>{
    const newCart = [];
