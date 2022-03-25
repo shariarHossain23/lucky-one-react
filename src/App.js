@@ -12,7 +12,15 @@ function App() {
   .then(data => setWatch(data))
   ,[])
   const handleCart = (selectedWatch) => {
-    let newCart = [...cart,selectedWatch]
+    let newCart = [];
+    const uniqueId = cart.find(watch => watch.id === selectedWatch.id)
+    if(!uniqueId){
+      newCart = [...cart,selectedWatch]
+    }
+    else{
+      alert("This Watch already submitted")
+    }
+  
     setCart(newCart)
  }
  const chosseOneBtn = () => {
