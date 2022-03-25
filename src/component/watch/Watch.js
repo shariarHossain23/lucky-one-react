@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Watchcard from '../watchCard/Watchcard';
 import './watch.css';
 
 const Watch = () => {
@@ -11,9 +12,9 @@ const Watch = () => {
     return (
         <div className='watch-product'>
             <div className='watch-data'>
-                <div>
+                <div className='watches'>
                     {
-                        watches.map(watch => console.log(watch))
+                        watches.map(watch => <Watchcard key={watch.id} watch ={watch}></Watchcard>)
                     }
                 </div>
             </div>
