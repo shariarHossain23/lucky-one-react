@@ -1,30 +1,35 @@
-.watch-product {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  gap: 10px;
+.card {
+  background-color: #fff;
+  box-shadow: 2px 3px 5px 2px rgba(218, 217, 217, 0.59);
+  border-radius: 5px;
+  padding: 10px 0;
+  height: 550px;
+  position: relative;
 }
-.watches {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.card-img img {
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px;
 }
-
-@media screen and (max-width: 768px) {
-  .watches {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .watch-product {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+.card-text {
+  margin-left: 10px;
 }
-@media screen and (max-width: 500px) {
-  .watches {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
+.card-btn {
+  background-color: rgb(218, 218, 214);
+  border: none;
+  margin-left: 7px;
+  font-size: 20px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: cadetblue;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 10px;
+}
+.card-btn:hover {
+  color: orangered;
+}
+.icon {
+  margin-left: 10px;
+  margin-top: 2px;
 }
