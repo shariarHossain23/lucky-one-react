@@ -1,7 +1,7 @@
 
 import { FaShoppingCart } from "@react-icons/all-files/fa/FaShoppingCart";
 import React from 'react';
-import './watchcart.css';
+import './watchcard.css';
 
 const Watchcard = ({watch}) => {
     console.log(watch)
