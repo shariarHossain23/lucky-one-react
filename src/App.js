@@ -1,9 +1,11 @@
 import './App.css';
+import Watch from './component/watch/Watch';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <h1>Watch shop</h1>
+     <Watch></Watch>
     </div>
   );
 }
