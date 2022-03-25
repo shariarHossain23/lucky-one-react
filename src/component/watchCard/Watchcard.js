@@ -1,3 +1,5 @@
+
+import { FaShoppingCart } from "@react-icons/all-files/fa/FaShoppingCart";
 import React from 'react';
 import './watchcart.css';
 
@@ -9,9 +11,11 @@ const Watchcard = ({watch}) => {
             <div className='card-img'>
             <img src={img}  alt="" ></img>
             </div>
+            <div className="card-text">
             <h2>Name:{name}</h2>
             <h2> price: ${balance}</h2>
-            <button>Add to cart</button>
+            </div>
+            <button className="card-btn">Add to cart <FaShoppingCart className="icon"></FaShoppingCart></button>
         </div>
     );
 };
