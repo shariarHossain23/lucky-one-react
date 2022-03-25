@@ -12,8 +12,20 @@ function App() {
   .then(data => setWatch(data))
   ,[])
   const handleCart = (selectedWatch) => {
-    let newCart = [...cart,selectedWatch]
+    let newCart = [selectedWatch]
+    console.log(...cart,newCart)
     setCart(newCart)
+ }
+ const chosseOneBtn = () => {
+   const addedCart = cart.length;
+   const random = Math.round(Math.random() * addedCart);
+   const newProduct = cart[random]
+   console.log(newProduct)
+  
+  }
+ const chooseAgainBtn = () =>{
+   const newCart = [];
+   setCart(newCart)
  }
   return (
     <div>
@@ -27,11 +39,11 @@ function App() {
       <div className='order'>
         <h1>selected watch</h1>
         {
-          cart.map(product => <Cart cart={product}></Cart>)
+          cart.map(product => <Cart key={product.id} cart={product}></Cart>)
         }
         <div>
-          <button>Choose one more</button> <br></br>
-          <button>Choose Again</button>
+          <button onClick={chosseOneBtn} className='choose-btn'>Choose one more</button> <br></br>
+          <button onClick={()=> chooseAgainBtn() } className='another-btn'>Choose Again</button>
         </div>
       </div>
      </div>
