@@ -3,8 +3,7 @@ import { FaShoppingCart } from "@react-icons/all-files/fa/FaShoppingCart";
 import React from 'react';
 import './watchcard.css';
 
-const Watchcard = ({watch}) => {
-    console.log(watch)
+const Watchcard = ({watch,handlecart}) => {
     const {img,name,balance} = watch;
     return (
         <div className='card'>
@@ -15,7 +14,7 @@ const Watchcard = ({watch}) => {
             <h2>Name:{name}</h2>
             <h2> price: ${balance}</h2>
             </div>
-            <button className="card-btn">Add to cart <FaShoppingCart className="icon"></FaShoppingCart></button>
+            <button onClick={()=> handlecart(watch)} className="card-btn">Add to cart <FaShoppingCart className="icon"></FaShoppingCart></button>
         </div>
     );
 };
