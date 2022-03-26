@@ -48,6 +48,7 @@ function App() {
    const newCart = [];
    setCart(newCart)
  }
+ 
   return (
     <div>
      <h1>Watch shop</h1>
