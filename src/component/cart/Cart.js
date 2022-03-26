@@ -7,8 +7,8 @@ const Cart = ({cart}) => {
     const {name,img} = cart;
     return (
         <div className='cart-card'>
-            <h3>{name}</h3>
             <img src={img} alt=""></img>
+            <h3>{name}</h3>
             <FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon>
         </div>
     );

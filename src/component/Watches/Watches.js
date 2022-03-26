@@ -39,20 +39,20 @@ const Watches = () => {
     
  }
  const chosseOneBtn = () => {
-   const addedCart = cart.length;
-   const random = Math.round(Math.random() * addedCart);
-   const newRandom = random 
-   const newProduct = cart[newRandom]
-   const newCart = cart.filter(product => product.id !== newProduct.id);
-   for (const element of newCart) {
-     cart.splice(element,1);
-     let chosseCart = [...cart]
-     setCart(chosseCart)
-   }
-
-   
+    const addedCart = cart.length;
+    const random = Math.round(Math.random() * addedCart);
+    const newRandom = random + ""
+    const newProduct = cart[newRandom]
+    const newCart = cart.filter(product => product.id !== newProduct.id);
+    for (const element of newCart) {
+      cart.splice(element,1);
+      let chosseCart = [...cart]
+      setCart(chosseCart)
+    }
+ 
     
-  }
+     
+   }
  const chooseAgainBtn = () =>{
    const newCart = [];
    setCart(newCart)
