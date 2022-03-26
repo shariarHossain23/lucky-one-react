@@ -6,10 +6,9 @@ import Cartproduct from "../cart/Cartproduct";
 import Watch from "../watch/Watch";
 import "./watches.css";
 
-const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]";
 const Watches = () => {
   const [watches, setWatch] = useState([]);
-  const [carts, setCart] = useState(getItem);
+  const [carts, setCart] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(
@@ -19,9 +18,6 @@ const Watches = () => {
         .then((data) => setWatch(data)),
     []
   );
-  useEffect(() => {
-    localStorage.setItem("watch-cart", JSON.stringify(carts));
-  }, [carts]);
   const handleCart = (selectedWatch) => {
     let newCart = [];
     const uniqueId = carts.find((watch) => watch.id === selectedWatch.id);
