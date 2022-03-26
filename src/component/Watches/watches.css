@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 50px;
+  margin-top: 50px;
 }
 .watches {
   display: grid;
