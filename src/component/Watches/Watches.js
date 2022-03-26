@@ -6,9 +6,10 @@ import Cart from '../cart/Cart';
 import Watch from '../watch/Watch';
 import './watches.css';
 
+const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]"
 const Watches = () => {
     const [watches,setWatch] = useState([]);
-  const [cart,setCart] = useState([])
+  const [cart,setCart] = useState(getItem)
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(()=>

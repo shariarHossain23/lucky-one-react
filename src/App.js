@@ -2,7 +2,7 @@ import Watches from "./component/Watches/Watches";
 
 
 
-// const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]"
+
 function App() {
   
 
