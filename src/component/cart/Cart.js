@@ -6,7 +6,7 @@ import './cart.css';
 const Cart = ({cart}) => {
     const {name,img} = cart;
     return (
-        <div className='cart-card' data-aos="fade-left">
+        <div className='cart-card'>
             <img src={img} alt=""></img>
             <h3>{name}</h3>
             <FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon>
