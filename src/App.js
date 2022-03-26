@@ -1,8 +1,11 @@
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import './App.css';
 import Cart from './component/cart/Cart';
 import Watch from './component/watch/Watch';
+
 
 const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]"
 function App() {
@@ -55,7 +58,7 @@ function App() {
 // react modal
 const customStyles = {
   content: {
-    top: '50%',
+    top: '15%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -87,7 +90,7 @@ function closeModal() {
         }
        
         <div>
-          <button onClick={chosseOneBtn} className='choose-btn'>Choose one more</button> <br></br>
+          <button onClick={()=>chosseOneBtn()} className='choose-btn'>Choose one more</button> <br></br>
           <button onClick={()=> chooseAgainBtn() } className='another-btn'>Choose Again</button>
         </div>
       </div>
@@ -98,7 +101,8 @@ function closeModal() {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2>You a</h2>
+        <FontAwesomeIcon onClick={()=> closeModal()} icon={faXmark}></FontAwesomeIcon>
+       <h5>you can choose only 4 item</h5>
       </Modal>
     </div>
   );
