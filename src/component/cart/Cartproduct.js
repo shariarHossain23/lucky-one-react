@@ -1,17 +1,19 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import './cart.css';
+import "./cart.css";
 
-const Cart = ({cart}) => {
-    const {name,img} = cart;
+const Cartproduct = ({carts}) => {
+    const {img,name} = carts;
     return (
-        <div className='cart-card' data-aos="fade-left">
+        <div>
+             <div className='cart-card'>
             <img src={img} alt=""></img>
             <h3>{name}</h3>
             <FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon>
         </div>
+    </div>
     );
 };
 
-export default Cart;
+export default Cartproduct;

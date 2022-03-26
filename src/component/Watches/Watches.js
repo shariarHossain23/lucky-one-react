@@ -2,7 +2,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import Cart from '../cart/Cart';
+import Cartproduct from '../cart/Cartproduct';
 import Watch from '../watch/Watch';
 import './watches.css';
 
@@ -85,9 +85,11 @@ function closeModal() {
       </div>
       <div className='order'>
         <h1>selected watch</h1>
+          <div>
           {
-              cart.map(product => <Cart key={product.id} cart={product}></Cart>)
+              cart.map(product => <Cartproduct key={product.id} carts={product}></Cartproduct>)
           }
+          </div>
        
         <div>
           <button  onClick={()=>chosseOneBtn()} className='choose-btn'>Choose one more</button> <br></br>
