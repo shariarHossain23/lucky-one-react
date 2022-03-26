@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 import './App.css';
 import Cart from './component/cart/Cart';
 import Watch from './component/watch/Watch';
@@ -7,6 +8,8 @@ const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]"
 function App() {
   const [watches,setWatch] = useState([]);
   const [cart,setCart] = useState(getItem)
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   useEffect(()=>
   fetch("data.json")
   .then(res => res.json())
@@ -26,7 +29,7 @@ function App() {
       newCart = [...cart]
     }
     if(newCart.length === 5){
-      alert("you can selected only four card")
+      setIsOpen(true);
     }
     else{
       setCart(newCart)
@@ -48,6 +51,25 @@ function App() {
    const newCart = [];
    setCart(newCart)
  }
+
+// react modal
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+
+
+function closeModal() {
+  setIsOpen(false);
+}
+
  
   return (
     <div>
@@ -63,12 +85,21 @@ function App() {
         {
           cart.map(product => <Cart key={product.id} cart={product}></Cart>)
         }
+       
         <div>
           <button onClick={chosseOneBtn} className='choose-btn'>Choose one more</button> <br></br>
           <button onClick={()=> chooseAgainBtn() } className='another-btn'>Choose Again</button>
         </div>
       </div>
      </div>
+     <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2>You a</h2>
+      </Modal>
     </div>
   );
 }
