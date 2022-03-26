@@ -3,14 +3,18 @@ import './App.css';
 import Cart from './component/cart/Cart';
 import Watch from './component/watch/Watch';
 
+const getItem = JSON.parse(localStorage.getItem("watch-cart")) || "[]"
 function App() {
   const [watches,setWatch] = useState([]);
-  const [cart,setCart] = useState([])
+  const [cart,setCart] = useState(getItem)
   useEffect(()=>
   fetch("data.json")
   .then(res => res.json())
   .then(data => setWatch(data))
   ,[])
+  useEffect(()=>{
+    localStorage.setItem("watch-cart",JSON.stringify(cart))
+  },[cart])
   const handleCart = (selectedWatch) => {
     let newCart = [];
     const uniqueId = cart.find(watch => watch.id === selectedWatch.id)
@@ -18,10 +22,16 @@ function App() {
       newCart = [...cart,selectedWatch]
     }
     else{
-      alert("This Watch already submitted")
+      alert("This Watch already added")
+      newCart = [...cart]
     }
-  
-    setCart(newCart)
+    if(newCart.length === 5){
+      alert("you can selected only four card")
+    }
+    else{
+      setCart(newCart)
+    }
+    
  }
  const chosseOneBtn = () => {
    const addedCart = cart.length;

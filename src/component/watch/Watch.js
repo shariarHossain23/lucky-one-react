@@ -10,7 +10,7 @@ const Watch = ({watch,handlecart}) => {
             </div>
             <div className="card-text">
             <h2>Name:{name}</h2>
-            <h2> price: ${balance}</h2>
+            <h2> price: {balance}</h2>
             </div>
             <button onClick={()=> handlecart(watch)} className="card-btn">Add to cart <FaShoppingCart className="icon"></FaShoppingCart></button>
         </div>
