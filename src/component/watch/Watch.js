@@ -4,7 +4,7 @@ import "./watch.css";
 const Watch = ({watch,handlecart}) => {
     const {img,name,balance} = watch;
     return (
-        <div className='card'>
+        <div className='card' data-aos="fade-right">
             <div className='card-img'>
             <img src={img}  alt="" ></img>
             </div>

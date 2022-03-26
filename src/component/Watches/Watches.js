@@ -90,7 +90,7 @@ function closeModal() {
           }
        
         <div>
-          <button onClick={()=>chosseOneBtn()} className='choose-btn'>Choose one more</button> <br></br>
+          <button  onClick={()=>chosseOneBtn()} className='choose-btn'>Choose one more</button> <br></br>
           <button onClick={()=> chooseAgainBtn() } className='another-btn'>Choose Again</button>
         </div>
       </div>
