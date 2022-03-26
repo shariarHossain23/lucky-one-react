@@ -38,12 +38,14 @@
   top: 0;
   height: calc(120vh - 43px);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1146px) {
   .watches {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+@media screen and (max-width: 820px) {
   .watch-product {
     display: grid;
     grid-template-columns: 1fr;

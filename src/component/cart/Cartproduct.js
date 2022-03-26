@@ -9,7 +9,7 @@ const Cartproduct = ({cart}) => {
         <div>
              <div className='cart-card'>
             <img src={img} alt=""></img>
-            <h3>{name}</h3>
+            <h6>{name}</h6>
             <FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon>
         </div>
     </div>
